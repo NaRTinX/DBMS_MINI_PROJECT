@@ -1,0 +1,186 @@
+Enter password: ****************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.28 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use jiffy_bakers
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_jiffy_bakers |
++------------------------+
+| cake1stv               |
+| cost2ndv               |
+| details3edv            |
+| info                   |
+| jiffy                  |
+| kitchen                |
+| menu                   |
+| staff_details          |
++------------------------+
+8 rows in set (0.02 sec)
+
+mysql> select * from info
+    -> ;
++----------+-------+------------------+--------------------+
+| Order_No | price | Status           | Specialities_Decor |
++----------+-------+------------------+--------------------+
+|      101 |   550 | 30 Minutes PLZZZ | Candels            |
+|      102 |   750 | Almost Done      | Ballons            |
+|      103 |  1450 | Done_VisitAgain  | PartyHats          |
+|      104 |  2200 | NULL             | PartyPopper        |
+|      105 |  2200 | NULL             | SpringsSpray       |
+|      106 |  3500 | NULL             | FireCrakers        |
+|      107 |  3600 | NULL             | SnowSpray          |
+|      108 |  4600 | NULL             | Spray              |
+|      109 |  1600 | NULL             | Blowers            |
+|      110 |   950 | NULL             | FireTriggers       |
+|      111 |  1050 | NULL             | JokerMasks         |
+|      112 |  4050 | NULL             | RantedClones       |
+|      113 |  3050 | NULL             | NULL               |
+|      114 |  3500 | NULL             | NULL               |
+|      115 |  1700 | NULL             | Ribbons            |
++----------+-------+------------------+--------------------+
+15 rows in set (0.02 sec)
+
+mysql> select * from jiffy;
++--------------+----------+
+| income_psm_k | staff_id |
++--------------+----------+
+| 777          |      240 |
+| 888          |      330 |
+| 999          |      490 |
+| 866          |      550 |
++--------------+----------+
+4 rows in set (0.01 sec)
+
+mysql> select * from kitchen;
++----------+---------------+-----------+-------------+
+| Order_No | Flavour       | Weight_gm | pastry_chef |
++----------+---------------+-----------+-------------+
+|      101 | Cocoa         |       250 |        NULL |
+|      102 | Butterscotch  |       500 |        NULL |
+|      103 | Vanilla       |      1000 |        NULL |
+|      104 | Cocoa         |      1500 |        NULL |
+|      105 | Butterscotch  |      1500 |        NULL |
+|      106 | Mango         |      2000 |        NULL |
+|      107 | Coconut       |      2500 |        NULL |
+|      108 | Jiffy_Special |      2000 |        NULL |
+|      109 | Jiffy_Special |      2500 |        NULL |
+|      110 | Jiffy_Special |      1000 |        NULL |
+|      111 | RedVelvet     |      1000 |        NULL |
+|      112 | Strawberry    |      1500 |        NULL |
+|      113 | DarkCocoa     |      3000 |        NULL |
+|      114 | Ferrero       |      1000 |        NULL |
+|      115 | Unibiq        |      1000 |        NULL |
++----------+---------------+-----------+-------------+
+15 rows in set (0.01 sec)
+
+mysql> select * from menu;
++-------+---------------+-----------+---------+--------+-------+
+| SR_NO | Flavour       | Weight_gm | Shape   | Layer  | Price |
++-------+---------------+-----------+---------+--------+-------+
+|     1 | COCOA         |       250 | HEART   | SINGLE |   550 |
+|     2 | BUTTERSCOTCH  |       500 | SQUARE  | DOUBLE |   750 |
+|     3 | VANILLA       |      1000 | OVAL    | DOUBLE |  1450 |
+|     4 | COCOA         |      1500 | HEART   | DOUBLE |  1700 |
+|     5 | BUTTERSCOTCH  |      1500 | RECT    | TRIPLE |  2200 |
+|     6 | MANGO         |      2000 | OVAL    | DOUBLE |  2200 |
+|     7 | COCONUT       |      2500 | CARTOON | TRIPLE |  3500 |
+|     8 | JIFFY_SPECIAL |      2000 | HEART   | DOUBLE |  3600 |
+|     9 | JIFFY_SPECIAL |      2500 | OVAL    | TRIPLE |  4600 |
+|    10 | JIFFY_SPECIAL |      1000 | SQUARE  | SINGLE |  1600 |
+|    11 | RED_VELVET    |      1000 | SQUARE  | SINGLE |   950 |
+|    12 | STRAWBERRY    |      1500 | HEART   | SINGLE |  1050 |
+|    13 | DARK_COCOA    |      3000 | SQUARE  | TRIPLE |  4050 |
+|    14 | FERRERO       |      1000 | HEART   | SINGLE |  3050 |
+|    15 | UNBIQ         |      1000 | HEART   | SINGLE |  3500 |
++-------+---------------+-----------+---------+--------+-------+
+15 rows in set (0.01 sec)
+
+mysql> select * from staff_details;
++----------+------------------+---------+--------------+--------+
+| Staff_id | Staff_Management | Chefs   | INCOME_PSM_k | BRANCH |
++----------+------------------+---------+--------------+--------+
+|      240 | IC_Transport     | Chef_PA | 777          |      3 |
+|      330 | IC_Import        | Chef_DW | 888          |   NULL |
+|      490 | IC_kitchen       | Chef_NC | 999          |      2 |
+|      550 | IC_Staff         | Chef_VM | 866          |   NULL |
++----------+------------------+---------+--------------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from cake1stv;
++-------+-------+
+| sr_no | price |
++-------+-------+
+|     1 |   550 |
+|     2 |   750 |
+|     3 |  1450 |
+|     4 |  1700 |
+|     5 |  2200 |
+|     6 |  2200 |
+|     7 |  3500 |
+|     8 |  3600 |
+|     9 |  4600 |
+|    10 |  1600 |
+|    11 |   950 |
+|    12 |  1050 |
+|    13 |  4050 |
+|    14 |  3050 |
+|    15 |  3500 |
++-------+-------+
+15 rows in set (0.00 sec)
+
+mysql> select * from cost2ndv;
++-------+----------+
+| price | order_no |
++-------+----------+
+|   550 |      101 |
+|   750 |      102 |
+|  1450 |      103 |
+|  2200 |      104 |
+|  2200 |      105 |
+|  3500 |      106 |
+|  3600 |      107 |
+|  4600 |      108 |
+|  1600 |      109 |
+|   950 |      110 |
+|  1050 |      111 |
+|  4050 |      112 |
+|  3050 |      113 |
+|  3500 |      114 |
+|  1700 |      115 |
++-------+----------+
+15 rows in set (0.00 sec)
+
+mysql> select * from detail3edv;
+ERROR 1146 (42S02): Table 'jiffy_bakers.detail3edv' doesn't exist
+mysql> select * from details3edv;
++-------------+----------+
+| pastry_chef | order_no |
++-------------+----------+
+|        NULL |      101 |
+|        NULL |      102 |
+|        NULL |      103 |
+|        NULL |      104 |
+|        NULL |      105 |
+|        NULL |      106 |
+|        NULL |      107 |
+|        NULL |      108 |
+|        NULL |      109 |
+|        NULL |      110 |
+|        NULL |      111 |
+|        NULL |      112 |
+|        NULL |      113 |
+|        NULL |      114 |
+|        NULL |      115 |
++-------------+----------+
+15 rows in set (0.00 sec)
